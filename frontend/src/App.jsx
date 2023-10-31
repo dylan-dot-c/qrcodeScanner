@@ -3,7 +3,7 @@ import Html5QrcodePlugin from './components/Html5QrCodePlugin'
 
 function App() {
 
-  const onNewScanResult = (decodedText:string, decodedResult:string) => {
+  const onNewScanResult = (decodedText, decodedResult) => {
         // handle decoded results here
         alert(decodedResult)
         alert(decodedText)

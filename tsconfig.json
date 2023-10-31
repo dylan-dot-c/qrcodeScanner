@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "frontend/src/main.jsx", "frontend/src/components/Html5QrCodePlugin.jsx"],
   "exclude": ["node_modules"]
 }
