@@ -21,6 +21,7 @@ const createConfig = (props) => {
     return config;
 };
 
+
 const Html5QrcodePlugin = (props) => {
 
     useEffect(() => {

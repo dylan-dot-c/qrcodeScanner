@@ -16,6 +16,18 @@ export default {
       options: {
         hotspot: true,
       }
+    }, {
+      name: "price",
+      title: "Price",
+      type: "number"
+    }, {
+      name: "expiryDate",
+      title: "Expiry Date",
+      type: "date"
+    }, {
+      name: "barcode",
+      title: "Barcode",
+      type: "string"
     }
   ]
 }
