@@ -12,6 +12,6 @@ export const client = createClient({
 })
 
 export async function getProduct(barcode) {
-  const product = await client.fetch(`*[_type=="product"&&barcode=="${barcode}"] {barcode, price, image}`)
+  const product = await client.fetch(`*[_type=="product"&&barcode=="${barcode}"] {barcode, price, image, name}`)
   return product
 }
