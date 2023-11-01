@@ -12,7 +12,8 @@ function App() {
 
   
   const onNewScanResult = async (decodedText, decodedResult) => {
-        // handle decoded results here
+    // handle decoded results here
+        setScanned(true)
         console.log("Data?")
         const data = await getProduct(decodedText)
         if(data.length > 0) {
@@ -37,7 +38,6 @@ function App() {
           alert("This item is not found!")
         }
 
-        setScanned(true)
     };
 
     return (
