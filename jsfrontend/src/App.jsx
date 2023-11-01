@@ -7,16 +7,12 @@ import {client, getProduct} from './sanity'
 function App() {
 
   const [codes, setCodes] = useState([])
+  const [scanned, setScanned] = useState(false)
 
 
   
   const onNewScanResult = async (decodedText, decodedResult) => {
         // handle decoded results here
-        setCodes((prev) => {
-          const copy = [...prev]
-          copy.push(decodedText)
-          return copy
-        })
         console.log("Data?")
         const data = await getProduct(decodedText)
         if(data.length > 0) {
@@ -35,20 +31,32 @@ function App() {
         // alert(decodedResult)
         console.log(decodedResult)
         alert(decodedText)
+        if(data.length > 0) {
+          alert("This item is in the database")
+        }else {
+          alert("This item is not found!")
+        }
 
-
+        setScanned(true)
     };
 
     return (
         <div className="App">
           <h1>Hello WOrld</h1>
+
+          <button
+            onClick={() => setScanned(false)}
+          >Start Scanning New</button>
+
             <div style={{maxWidth: "500px", margin: "auto"}}>
-              <Html5QrcodePlugin
+              {
+                !scanned && <Html5QrcodePlugin
                 fps={10}
                 qrbox={250}
                 disableFlip={false}
                 qrCodeSuccessCallback={onNewScanResult}
             />
+              }
             </div>
             <ul>
 
